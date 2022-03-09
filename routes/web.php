@@ -43,3 +43,5 @@ Route::get('/category',[HomeController::class,'category']);
 Route::get('/view_category/{slug}',[HomeController::class,'viewcategory']);
 Route::get('/details/{category_slug}/{item_slug}',[HomeController::class,'pdetails']);
 Route::get('/showappointment',[AdminController::class,'showappointment']);
+Route::get('/addtocart',[HomeController::class,'addtocart']);
+Route::get('/ordernow',[HomeController::class,'ordernow']);

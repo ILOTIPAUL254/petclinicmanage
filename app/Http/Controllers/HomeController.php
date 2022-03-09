@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\appointment;
+use App\Models\Cart;
 use App\Models\Category;
 
 class HomeController extends Controller
@@ -125,5 +126,26 @@ class HomeController extends Controller
         {
             return redirect()->back()->with('status',"category not found");
         }
+    }
+    public function addtocart(Request $request)
+
+    {
+        if($request->session()->has('user'))
+        {
+            $cart=new Cart;
+            $cart->user_id=$request->session()->get('user')['id'];
+            $cart->prod_id=$request->product_id;
+            return view('user.addtocart');
+        }
+        else
+
+    {
+        return redirect('/login');
+    }
+        
+    }
+    public function ordernow()
+    {
+        return view('user.ordernow');
     }
 }

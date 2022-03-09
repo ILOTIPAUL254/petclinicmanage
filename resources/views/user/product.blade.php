@@ -5,7 +5,7 @@
       <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
          
         @foreach ($product as $products )  
-          
+        
         <div class="item">
           <div class="card-doctor">
             <div class="header">
@@ -22,6 +22,7 @@
             </div>
           </div>
         </div>
+      
         
         @endforeach
       </div>
